@@ -32,12 +32,29 @@ let isDarkTheme = true;
 function toggleTheme() {
     const body = document.body;
     const themeButton = document.querySelector('.theme-toggle');
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const logo = document.querySelector('.logo');
     
     if (isDarkTheme) {
         // Switch to light theme
         body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
         body.style.color = '#333';
         themeButton.textContent = '🌙';
+        
+        // Update header for light theme
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.borderBottom = '1px solid rgba(74, 222, 128, 0.5)';
+        logo.style.color = '#333';
+        
+        // Update navigation links for light theme
+        navLinks.forEach(link => {
+            link.style.color = '#333';
+        });
+        
+        // Update theme button for light theme
+        themeButton.style.color = '#333';
+        themeButton.style.borderColor = '#4ade80';
         
         // Update section backgrounds for light theme
         const sections = document.querySelectorAll('.section');
@@ -51,6 +68,20 @@ function toggleTheme() {
         body.style.background = '#000';
         body.style.color = 'white';
         themeButton.textContent = '☀️';
+        
+        // Reset header for dark theme
+        header.style.background = 'rgba(0, 0, 0, 0.95)';
+        header.style.borderBottom = '1px solid rgba(74, 222, 128, 0.3)';
+        logo.style.color = '#4ade80';
+        
+        // Reset navigation links for dark theme
+        navLinks.forEach(link => {
+            link.style.color = 'white';
+        });
+        
+        // Reset theme button for dark theme
+        themeButton.style.color = 'white';
+        themeButton.style.borderColor = '#4ade80';
         
         // Reset section backgrounds
         const sections = document.querySelectorAll('.section');

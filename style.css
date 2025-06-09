@@ -161,14 +161,14 @@
 
         .nav-link:hover {
             background: rgba(74, 222, 128, 0.2);
-            color: #4ade80;
+            color: #4ade80 !important;
             border-color: rgba(74, 222, 128, 0.3);
             transform: translateY(-2px);
         }
 
         .nav-link.active {
             background: rgba(74, 222, 128, 0.3);
-            color: #4ade80;
+            color: #4ade80 !important;
             border-color: #4ade80;
         }
 
@@ -185,7 +185,7 @@
 
         .theme-toggle:hover {
             background: #4ade80;
-            color: black;
+            color: black !important;
         }
 
         /* Hero Section */
