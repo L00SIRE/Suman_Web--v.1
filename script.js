@@ -139,12 +139,26 @@ function handleNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
     
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            smoothScroll(targetId);
+            
+            // Update active state
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+    
+    // Handle scroll highlighting
     window.addEventListener('scroll', () => {
         let current = '';
-        const scrollPosition = window.scrollY + 200;
+        const scrollPosition = window.scrollY + 150;
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
