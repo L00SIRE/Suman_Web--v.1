@@ -3,196 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suman Dangal - Portfolio</title>
-    <!-- Cache bust: Enhanced portfolio with skills and achievements -->
+    <title>Suman Dangal - AI Engineer & Cultural Technology Innovator</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Stars Background -->
-    <div class="stars" id="stars"></div>
+    <div class="stars-container" id="starsContainer"></div>
 
     <!-- Intro Screen -->
     <div class="intro-screen" id="introScreen">
-        <div class="intro-icon"></div>
-        <h1 class="intro-title">Namaste 🙏</h1>
-        <p class="intro-subtitle">Welcome to my portfolio website!</p>
+        <div class="intro-logo">
+            <div class="namaste-3d">🙏</div>
+        </div>
+        <div class="intro-text">
+            <h1 class="intro-title">Suman Dangal</h1>
+            <p class="intro-subtitle">AI Engineer & Innovation Architect</p>
+        </div>
     </div>
 
     <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <div class="logo">नमस्ते, I'm Suman</div>
-            <div class="header-controls">
-                <nav class="nav-menu">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#achievements" class="nav-link">Achievements</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-                <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
-            </div>
+        <nav class="nav-container">
+                    <div class="brand">
+            <i class="fas fa-mountain"></i>
+            <span>Suman Dangal</span>
+            <small>From the Himalayas 🏔️</small>
         </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#skills" class="nav-link">
+                <i class="fas fa-cogs"></i>
+                <span>Expertise</span>
+            </a>
+            <a href="#projects" class="nav-link">
+                <i class="fas fa-rocket"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#achievements" class="nav-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="#feedback" class="nav-link">
+                <i class="fas fa-comments"></i>
+                <span>Feedback</span>
+            </a>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-paper-plane"></i>
+                <span>Connect</span>
+            </a>
+        </div>
+                    <button class="theme-toggle" onclick="toggleTheme()">
+            <div class="toggle-switch">
+                <div class="toggle-track">
+                    <div class="toggle-thumb">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <span id="themeText">Light Mode</span>
+        </button>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
         <!-- Hero Section -->
-        <section class="section hero-section" id="hero">
+        <section class="hero" id="about">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Suman Dangal</span></h1>
-                <p class="hero-subtitle">Computer Science Student & AI Enthusiast from Nepal</p>
+                <p class="hero-greeting">नमस्ते, I'm</p>
+                <h1 class="hero-title">Suman Dangal</h1>
+                <h2 class="hero-subtitle">AI Engineer & Full-Stack Developer</h2>
                 <p class="hero-description">
-                    Passionate about creating innovative solutions that bridge technology and real-world impact. 
-                    Specializing in AI, web development, and building tools that make a difference.
+                    Pioneering the intersection of artificial intelligence and cultural preservation. I architect intelligent systems that solve real-world challenges while honoring technological innovation and cultural heritage from Nepal.
                 </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="smoothScroll('#projects')">View My Work</button>
-                    <button class="btn btn-secondary" onclick="smoothScroll('#contact')">Get In Touch</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="section" id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a Computer Science student from Nepal with a deep passion for artificial intelligence, 
-                        web development, and creating technology that addresses real-world challenges. My journey 
-                        began with curiosity about how technology can improve lives, leading me to develop innovative 
-                        solutions like Sanket-AI.
-                    </p>
-                    <p>
-                        I believe in the power of combining creativity with technical expertise to transform ideas 
-                        into impactful realities. Whether it's building AI models for accessibility or crafting 
-                        beautiful web experiences, I'm always eager to learn and push boundaries.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>3+</h3>
-                        <p>Years of Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>10+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5+</h3>
-                        <p>Awards Won</p>
-                    </div>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-primary">Explore Projects →</a>
+                    <a href="#contact" class="cta-secondary">Let's Connect</a>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section class="section" id="skills">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-subtitle">Mastering cutting-edge technologies to build intelligent, scalable solutions</p>
+            
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">🐍</div>
-                            <span>Python</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">⚡</div>
-                            <span>JavaScript</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">☕</div>
-                            <span>Java</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🌊</div>
-                            <span>C++</span>
-                            <div class="skill-level" data-level="75"></div>
-                        </div>
+                                    <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="skill-title">Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Go</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">🧠</div>
-                            <span>TensorFlow</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🔥</div>
-                            <span>PyTorch</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">👁️</div>
-                            <span>Computer Vision</span>
-                            <div class="skill-level" data-level="88"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🗣️</div>
-                            <span>NLP</span>
-                            <div class="skill-level" data-level="75"></div>
-                        </div>
+                                    <div class="skill-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="skill-title">AI & Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Agentic Frameworks</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">⚛️</div>
-                            <span>React</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <!-- Added -->
-                        <div class="skill-item">
-                            <div class="skill-icon">🟢</div>
-                            <span>Node.js</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🎨</div>
-                            <span>HTML/CSS</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🗄️</div>
-                            <span>MongoDB</span>
-                            <div class="skill-level" data-level="75"></div>
-                        </div>
+                                    <div class="skill-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3 class="skill-title">Web Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">REST APIs</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">🐙</div>
-                            <span>Git/GitHub</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">🐋</div>
-                            <span>Docker</span>
-                            <div class="skill-level" data-level="70"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">☁️</div>
-                            <span>AWS</span>
-                            <div class="skill-level" data-level="65"></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">📊</div>
-                            <span>Jupyter</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
+                                    <div class="skill-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="skill-title">Tools & Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
                     </div>
                 </div>
             </div>
@@ -200,86 +157,73 @@
 
         <!-- Projects Section -->
         <section class="section" id="projects">
-            <h2>Featured Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Innovative solutions at the forefront of AI, accessibility, and cultural preservation</p>
+            
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Sanket-AI</h3>
-                        <div class="project-tags">
-                            <span class="tag">AI</span>
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Accessibility</span>
+                        <div class="project-icon">
+                        <i class="fas fa-sign-language"></i>
+                    </div>
+                        <div>
+                            <h3 class="project-title">Sanket-AI</h3>
                         </div>
+                        <div class="project-award">🏆 Multi-Award Winner</div>
                     </div>
                     <p class="project-description">
-                        A groundbreaking real-time Nepali sign language to text translator powered by advanced AI. 
-                        This project bridges communication gaps and promotes inclusivity for the deaf community in Nepal.
+                        Revolutionary real-time Nepali sign language to text translator powered by advanced computer vision and NLP. This groundbreaking accessibility tool bridges communication gaps for the deaf and hard-of-hearing community in Nepal, recognized with multiple national awards for its social impact and technical excellence.
                     </p>
-                    <div class="project-features">
-                        <ul>
-                            <li>Real-time gesture recognition</li>
-                            <li>High accuracy translation</li>
-                            <li>Multiple award winner</li>
-                            <li>Mobile-friendly interface</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">Source Code</a>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">OpenCV</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Portfolio Website</h3>
-                        <div class="project-tags">
-                            <span class="tag">Web Design</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Responsive</span>
+                        <div class="project-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                        <div>
+                            <h3 class="project-title">Dristi AI</h3>
                         </div>
+                        <div class="project-award">🥇 APCYS 2023</div>
                     </div>
                     <p class="project-description">
-                        A modern, interactive portfolio website showcasing my work and skills with beautiful animations 
-                        and responsive design. Built with vanilla JavaScript and modern CSS techniques.
+                        Next-generation medical diagnostic system that detects anomalies in bodily fluids using advanced machine learning algorithms. Winner of the Asia Pacific Conference of Young Scientists 2023, this AI-powered solution enhances early disease detection capabilities, potentially revolutionizing preventive healthcare through non-invasive analysis of biological samples.
                     </p>
-                    <div class="project-features">
-                        <ul>
-                            <li>Interactive star field background</li>
-                            <li>Smooth animations and transitions</li>
-                            <li>Fully responsive design</li>
-                            <li>Modern UI/UX practices</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">Source Code</a>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Medical AI</span>
+                        <span class="tech-tag">Image Analysis</span>
+                        <span class="tech-tag">PyTorch</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">AI Learning Platform</h3>
-                        <div class="project-tags">
-                            <span class="tag">Education</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
+                        <div class="project-icon">
+                        <i class="fas fa-dharmachakra"></i>
+                    </div>
+                        <div>
+                            <h3 class="project-title">Saalik</h3>
                         </div>
+                        <div class="project-award">🏛️ Gov Partnership</div>
                     </div>
                     <p class="project-description">
-                        An interactive learning platform that makes AI concepts accessible to beginners through 
-                        hands-on tutorials, visualizations, and practical exercises.
+                        Cultural heritage preservation system that identifies and catalogs traditional Nepali deity sculptures and religious artifacts. Developed in collaboration with the National Archaeological Department and National Tourism Board of Nepal, this AI-driven platform safeguards cultural knowledge, promotes heritage tourism, and ensures the preservation of Nepal's rich artistic legacy for future generations.
                     </p>
-                    <div class="project-features">
-                        <ul>
-                            <li>Interactive tutorials</li>
-                            <li>Code playground</li>
-                            <li>Progress tracking</li>
-                            <li>Community features</li>
-                        </ul>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">Source Code</a>
+                    <div class="project-tech">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Cultural AI</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Node.js</span>
                     </div>
                 </div>
             </div>
@@ -287,116 +231,194 @@
 
         <!-- Achievements Section -->
         <section class="section" id="achievements">
-            <h2>Achievements & Recognition</h2>
-            <div class="achievements-container">
-                <div class="achievement-item">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-content">
-                        <h3>National AI Innovation Award</h3>
-                        <p class="achievement-year">2024</p>
-                        <p class="achievement-description">
-                            Winner of the National AI Innovation Competition for Sanket-AI, 
-                            recognized for outstanding contribution to accessibility technology.
-                        </p>
+            <h2 class="section-title">Recognition & Achievements</h2>
+            <p class="section-subtitle">Excellence recognized at national and international levels</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
                     </div>
+                    <h3 class="achievement-title">APCYS Winner</h3>
+                    <p class="achievement-year">2023 - Computer Science Category</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Asia Pacific Conference of Young Scientists</p>
                 </div>
 
-                <div class="achievement-item">
-                    <div class="achievement-icon">🥇</div>
-                    <div class="achievement-content">
-                        <h3>Best Student Project Award</h3>
-                        <p class="achievement-year">2024</p>
-                        <p class="achievement-description">
-                            First place in the University's Annual Project Exhibition for 
-                            developing innovative solutions using artificial intelligence.
-                        </p>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
+                    <h3 class="achievement-title">Dean's List</h3>
+                    <p class="achievement-year">Fall 2024 & Summer 2025</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Perfect 4.0 GPA - Top Academic Performer</p>
                 </div>
 
-                <div class="achievement-item">
-                    <div class="achievement-icon">🌟</div>
-                    <div class="achievement-content">
-                        <h3>Tech Innovation Fellowship</h3>
-                        <p class="achievement-year">2023</p>
-                        <p class="achievement-description">
-                            Selected for a prestigious fellowship program supporting young 
-                            innovators in Nepal's technology sector.
-                        </p>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
+                    <h3 class="achievement-title">Government Collaboration</h3>
+                    <p class="achievement-year">2024 - Present</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">National Archaeological Dept. & Tourism Board</p>
                 </div>
 
-                <div class="achievement-item">
-                    <div class="achievement-icon">🚀</div>
-                    <div class="achievement-content">
-                        <h3>Hackathon Champion</h3>
-                        <p class="achievement-year">2023</p>
-                        <p class="achievement-description">
-                            Won multiple hackathons for developing creative solutions to 
-                            real-world problems using emerging technologies.
-                        </p>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
                     </div>
+                    <h3 class="achievement-title">Multiple National Awards</h3>
+                    <p class="achievement-year">2023 - 2025</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Innovation & Social Impact Recognition</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="achievement-item">
-                    <div class="achievement-icon">📜</div>
-                    <div class="achievement-content">
-                        <h3>Dean's List Recognition</h3>
-                        <p class="achievement-year">2022-2024</p>
-                        <p class="achievement-description">
-                            Consistently maintained academic excellence with GPA above 3.8, 
-                            earning Dean's List recognition for multiple semesters.
-                        </p>
+        <!-- Feedback Section -->
+        <section class="section" id="feedback">
+            <h2 class="section-title">Share Your Feedback</h2>
+            <p class="section-subtitle">Your thoughts help me grow and create better solutions</p>
+            
+            <div class="feedback-container">
+                <div class="feedback-intro">
+                    <div class="feedback-cultural">
+                        <i class="fas fa-hands-praying"></i>
+                        <span class="nepali-text">धन्यवाद</span>
                     </div>
+                    <h3>I value your perspective</h3>
+                    <p>Whether you're a potential collaborator, fellow developer, or someone interested in cultural technology, your feedback helps me improve and grow. Share your thoughts!</p>
                 </div>
-
-                <div class="achievement-item">
-                    <div class="achievement-icon">🎓</div>
-                    <div class="achievement-content">
-                        <h3>Leadership Excellence Award</h3>
-                        <p class="achievement-year">2023</p>
-                        <p class="achievement-description">
-                            Recognized for exceptional leadership in organizing tech workshops 
-                            and mentoring junior students in programming and AI.
-                        </p>
+                
+                <form class="feedback-form" id="feedbackForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Your Name
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="category" class="form-label">
+                            <i class="fas fa-tag"></i>
+                            Feedback Category
+                        </label>
+                        <select id="category" name="category" class="form-select" required>
+                            <option value="">Select a category...</option>
+                            <option value="general">General Feedback</option>
+                            <option value="projects">About My Projects</option>
+                            <option value="collaboration">Collaboration Interest</option>
+                            <option value="cultural">Cultural Heritage Projects</option>
+                            <option value="website">Website Experience</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating" class="form-label">
+                            <i class="fas fa-star"></i>
+                            Rate My Portfolio
+                        </label>
+                        <div class="rating-container">
+                            <div class="stars-rating" id="starsRating">
+                                <span class="star" data-rating="1"><i class="fas fa-star"></i></span>
+                                <span class="star" data-rating="2"><i class="fas fa-star"></i></span>
+                                <span class="star" data-rating="3"><i class="fas fa-star"></i></span>
+                                <span class="star" data-rating="4"><i class="fas fa-star"></i></span>
+                                <span class="star" data-rating="5"><i class="fas fa-star"></i></span>
+                            </div>
+                            <span class="rating-text" id="ratingText">Click to rate</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" value="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment-dots"></i>
+                            Your Message
+                        </label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Share your thoughts, suggestions, or just say hello..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-content">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Feedback
+                            </span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Sending...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="feedback-success" id="feedbackSuccess" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>धन्यवाद! Thank you!</h3>
+                    <p>Your feedback has been received. I'll get back to you soon!</p>
+                    <button class="new-feedback-btn" onclick="resetFeedbackForm()">
+                        <i class="fas fa-plus"></i>
+                        Send Another Feedback
+                    </button>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section class="section" id="contact">
-            <h2>Let's Connect</h2>
+            <h2 class="section-title">Let's Connect</h2>
             <div class="contact-content">
                 <div class="contact-intro">
-                    <p>
+                    <p class="section-subtitle">
                         I'm always excited to discuss new opportunities, collaborate on interesting projects, 
                         or simply chat about technology and innovation. Feel free to reach out!
                     </p>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div class="contact-details">
                             <h4>Email</h4>
                             <a href="mailto:sumandangal007@gmail.com" class="contact-link">sumandangal007@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">💻</div>
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
                         <div class="contact-details">
                             <h4>GitHub</h4>
                             <a href="https://github.com/L00SIRE" class="contact-link" target="_blank">@L00SIRE</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📸</div>
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
                         <div class="contact-details">
                             <h4>Instagram</h4>
                             <a href="https://www.instagram.com/loosire__/" class="contact-link" target="_blank">@l00sire</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">💼</div>
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
                         <div class="contact-details">
                             <h4>LinkedIn</h4>
                             <a href="https://www.linkedin.com/in/suman-dangal-007np/" class="contact-link" target="_blank">@Suman Dangal</a>
@@ -409,10 +431,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>© 2025 Suman Dangal. Made with ❤️ from Nepal.</p>
-            <p class="footer-subtitle">Building the future, one line of code at a time.</p>
-        </div>
+        <p>© 2025 Suman Dangal. Crafted with precision and passion in Nepal. 🇳🇵</p>
     </footer>
 
     <script src="script.js"></script>
