@@ -2,11 +2,11 @@
     function createSophisticatedStars() {
         const container = document.getElementById('starsContainer');
         const numberOfStars = 200;
+
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
         
-        for (let i = 0; i < numberOfStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            
             // Enhanced positioning with clusters
             const clusterChance = Math.random();
             let x, y;
@@ -27,8 +27,8 @@
             
             // Variable star sizes
             const size = Math.random() * 4 + 0.5;
-            star.style.width = size + 'px';
-            star.style.height = size + 'px';
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
             
             // Sophisticated animation timing
             star.style.animationDelay = Math.random() * 4 + 's';
@@ -223,17 +223,17 @@
         let mouseX = 0;
         let mouseY = 0;
         
-        document.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX / window.innerWidth;
             mouseY = e.clientY / window.innerHeight;
             
             // Parallax effect for stars
-            const stars = document.querySelectorAll('.star');
-            stars.forEach((star, index) => {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
                 if (index % 8 === 0) { // Affect every 8th star for performance
                     const speed = 0.8;
-                    const x = (mouseX - 0.5) * speed;
-                    const y = (mouseY - 0.5) * speed;
+            const x = (mouseX - 0.5) * speed;
+            const y = (mouseY - 0.5) * speed;
                     
                     star.style.transform = `translate(${x}px, ${y}px)`;
                 }
@@ -285,7 +285,7 @@
         }, observerOptions);
         
         // Observe elements for scroll animations
-        document.querySelectorAll('.skill-category, .project-card, .achievement-card, .feedback-form').forEach(el => {
+        document.querySelectorAll('.skill-category, .project-card, .achievement-card, .feedback-form, .experience-item, .education-item, .resume-download-btn, .resume-view-btn').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

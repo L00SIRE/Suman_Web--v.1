@@ -473,7 +473,7 @@ body.light-theme {
     flex-wrap: wrap;
 }
 
-.cta-primary, .cta-secondary {
+.cta-primary, .cta-secondary, .cta-resume {
     padding: 1rem 2rem;
     border-radius: 30px;
     font-weight: 600;
@@ -525,11 +525,378 @@ body.light-theme {
     color: white;
 }
 
+.cta-resume {
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    color: white;
+    border: none;
+}
+
+.cta-resume:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
 /* Sections */
 .section {
     padding: 6rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+/* Experience Section */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.experience-item {
+    background: var(--card-dark);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    border: 1px solid var(--border-dark);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+    will-change: transform;
+}
+
+.light-theme .experience-item {
+    background: var(--card-light);
+    border-color: var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(0,255,136,0.10);
+}
+
+.light-theme .experience-item:hover {
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.10);
+}
+
+.experience-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.experience-company {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--accent-dark);
+}
+
+.light-theme .experience-company {
+    color: var(--accent-light);
+}
+
+.experience-role {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-dark);
+    opacity: 0.85;
+}
+
+.light-theme .experience-role {
+    color: var(--text-light);
+}
+
+.experience-dates {
+    font-size: 0.95rem;
+    color: #888;
+    margin-left: auto;
+    font-style: italic;
+}
+
+.experience-details {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+    color: inherit;
+    opacity: 0.95;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    list-style: disc;
+}
+
+.experience-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Education Section */
+.education-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background: var(--card-dark);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid var(--border-dark);
+    padding: 3rem 2.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    will-change: transform;
+}
+
+.light-theme .education-item {
+    background: var(--card-light);
+    border-color: var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 255, 136, 0.1);
+}
+
+.light-theme .education-item:hover {
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.1);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.education-institution h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 0.5rem;
+}
+
+.light-theme .education-institution h3 {
+    color: var(--accent-light);
+}
+
+.education-location {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.education-dates {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.education-degree h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.dual-majors {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.major-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    flex: 1;
+    min-width: 250px;
+}
+
+.light-theme .major-item {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.major-item i {
+    font-size: 1.3rem;
+    color: var(--accent-dark);
+}
+
+.light-theme .major-item i {
+    color: var(--accent-light);
+}
+
+.major-item span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.education-details {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-dark);
+}
+
+.light-theme .education-details {
+    border-top-color: var(--border-light);
+}
+
+.education-details p {
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Resume Section */
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.resume-download-btn, .resume-view-btn {
+    background: var(--card-dark);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--accent-dark);
+    color: var(--text-dark);
+    padding: 1.5rem 2.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.light-theme .resume-download-btn,
+.light-theme .resume-view-btn {
+    background: var(--card-light);
+    border-color: var(--accent-light);
+    color: var(--text-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resume-download-btn {
+    background: linear-gradient(45deg, var(--accent-dark), #00d4ff);
+    color: var(--primary-dark);
+    border: none;
+}
+
+.light-theme .resume-download-btn {
+    background: linear-gradient(45deg, var(--accent-light), #8b5cf6);
+    color: white;
+}
+
+.resume-download-btn:hover,
+.resume-view-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 255, 136, 0.2);
+}
+
+.light-theme .resume-download-btn:hover,
+.light-theme .resume-view-btn:hover {
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
+}
+
+.resume-download-btn i,
+.resume-view-btn i {
+    font-size: 1.5rem;
+}
+
+.resume-download-btn span,
+.resume-view-btn span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.resume-download-btn small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.resume-highlights {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.resume-highlights h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--accent-dark);
+}
+
+.light-theme .resume-highlights h3 {
+    color: var(--accent-light);
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-item {
+    background: var(--card-dark);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-dark);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.light-theme .highlight-item {
+    background: var(--card-light);
+    border-color: var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 255, 136, 0.1);
+}
+
+.light-theme .highlight-item:hover {
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+}
+
+.highlight-item i {
+    font-size: 2.5rem;
+    color: var(--accent-dark);
+    margin-bottom: 1rem;
+}
+
+.light-theme .highlight-item i {
+    color: var(--accent-light);
+}
+
+.highlight-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.highlight-item p {
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 .section-title {
@@ -937,6 +1304,65 @@ body.light-theme {
     
     .submit-btn {
         width: 100%;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .experience-dates {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+    
+    .experience-item {
+        padding: 2rem 1.5rem;
+    }
+    
+    .education-item {
+        padding: 2rem 1.5rem;
+    }
+    
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .dual-majors {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .major-item {
+        min-width: auto;
+    }
+    
+    .resume-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .resume-download-btn,
+    .resume-view-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        gap: 1rem;
+    }
+    
+    .cta-resume {
+        width: 100%;
+        justify-content: center;
     }
 }
 
