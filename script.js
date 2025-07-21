@@ -535,3 +535,64 @@ document.addEventListener('mousemove', (e) => {
     // Export functions for global access
     window.toggleTheme = toggleTheme;
     window.resetFeedbackForm = resetFeedbackForm;
+
+// --- SCROLLSPY & SECTION FADE-IN ---
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section.section, section.hero');
+
+  function onScroll() {
+    let scrollPos = window.scrollY + 120;
+    let found = false;
+    sections.forEach(section => {
+      if (!found && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const id = section.getAttribute('id');
+        const activeLink = document.querySelector('.nav-link[href="#' + id + '"]');
+        if (activeLink) activeLink.classList.add('active');
+        found = true;
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // --- Section Fade-in ---
+  function revealSections() {
+    const trigger = window.innerHeight * 0.92;
+    document.querySelectorAll('.section, .hero').forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < trigger) {
+        section.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealSections);
+  window.addEventListener('resize', revealSections);
+  revealSections();
+});
+
+// --- BUTTON MICROINTERACTIONS ---
+document.querySelectorAll('button, .cta-primary, .cta-secondary, .cta-resume').forEach(btn => {
+  btn.addEventListener('mousedown', function() {
+    btn.style.transform = 'scale(0.96)';
+  });
+  btn.addEventListener('mouseup', function() {
+    btn.style.transform = '';
+  });
+  btn.addEventListener('mouseleave', function() {
+    btn.style.transform = '';
+  });
+});
+
+// --- FORM FIELD FOCUS EFFECTS ---
+document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(field => {
+  field.addEventListener('focus', function() {
+    field.style.boxShadow = '0 0 0 3px rgba(99,102,241,0.18)';
+    field.style.borderColor = 'var(--accent-primary)';
+  });
+  field.addEventListener('blur', function() {
+    field.style.boxShadow = '';
+    field.style.borderColor = '';
+  });
+});
