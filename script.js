@@ -1,4 +1,9 @@
-    // Enhanced Stars Creation
+// EmailJS Configuration
+(function() {
+    emailjs.init("DfQN_n_9VGoBsxjpV");
+})();
+
+// Enhanced Stars Creation
     function createSophisticatedStars() {
         const container = document.getElementById('starsContainer');
         const numberOfStars = 200;
@@ -144,8 +149,8 @@
             };
             
             try {
-                // Simulate form submission (replace with actual endpoint)
-                await simulateFormSubmission(feedbackData);
+                // Send email via EmailJS
+                await sendEmail(feedbackData);
                 
                 // Show success message
                 form.style.display = 'none';
@@ -165,15 +170,26 @@
         });
     }
 
-    // Simulate form submission
-    function simulateFormSubmission(data) {
-        return new Promise((resolve) => {
-            // Simulate network delay
-            setTimeout(() => {
-                // In a real app, this would send data to your backend
-                localStorage.setItem('latestFeedback', JSON.stringify(data));
-                resolve();
-            }, 2000);
+    // EmailJS form submission
+    function sendEmail(data) {
+        return new Promise((resolve, reject) => {
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                category: data.category,
+                rating: data.rating,
+                message: data.message,
+                to_email: 'sumandangal007@gmail.com' // Replace with your email
+            };
+            
+            emailjs.send('service_f1fogzq', 'template_7v9xvb9', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    resolve();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    reject(error);
+                });
         });
     }
 
