@@ -22,7 +22,7 @@
         </div>
         <div class="intro-text">
             <h1 class="intro-title">Suman Dangal</h1>
-            <p class="intro-subtitle">Co-founder & Founding Engineer @ Dr. Money (Stealth AI Fintech) | Co-founder & CTO @ Saalik Tech</p>
+            <p class="intro-subtitle">Co-founder & Founding Engineer @ Dr. Money | Co-founder & CTO @ Saalik Tech</p>
         </div>
     </div>
 
@@ -34,6 +34,14 @@
             <span>Suman Dangal</span>
             <small>AI Researcher</small>
         </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <div class="nav-links">
             <a href="#about" class="nav-link">
                 <i class="fas fa-user"></i>
@@ -59,6 +67,13 @@
                 <i class="fas fa-envelope"></i>
                 <span>Contact</span>
             </a>
+            
+            <!-- Mobile Theme Toggle -->
+            <button class="mobile-theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-sun light-icon"></i>
+                <i class="fas fa-moon dark-icon"></i>
+                <span id="mobileThemeText">Light Mode</span>
+            </button>
         </div>
                     <button class="theme-toggle" onclick="toggleTheme()">
             <div class="toggle-switch">
@@ -83,11 +98,11 @@
                 <img src="me.png" alt="Suman Dangal profile photo" class="profile-pic" />
             </div>
             <div class="hero-content">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-title">Suman Dangal</h1>
-                <h2 class="hero-subtitle">AI, Startup & Cultural Technology Enthusiast</h2>
+                <p class="hero-greeting">Hey there!</p>
+                <h1 class="hero-title">I'm Suman</h1>
+                <h2 class="hero-subtitle">I love building things that matter</h2>
                 <p class="hero-description">
-                    Based in Boston, MA, I'm a co-founder and founding engineer at Dr. Money, an AI-powered fintech platform helping subprime and credit-invisible users improve their financial health. I'm also the co-founder and CTO of Saalik Tech, where we use AI to preserve and analyze Nepali cultural heritage. Currently pursuing a Bachelor of Science in Computer Science at Springfield College (expected 2028). My work spans AI research, software engineering, mathematical innovation, and cultural technology. I am passionate about building impactful products, leading teams, and exploring the intersection of technology, culture, and society.
+                    Thanks for stopping by! I’m someone who’s always curious and always learning. Right now, I’m living in Boston and working on Dr. Money, a startup I co-founded to help people improve their financial health with the power of AI. I also help lead Saalik Tech, where we’re using technology to keep Nepali culture alive and thriving. When I’m not working on these projects, I’m studying computer science at Springfield College. I’m always excited to meet people who want to make a difference. If that’s you, let’s connect!
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="cta-primary">View Projects</a>
@@ -230,7 +245,7 @@
                         <div class="project-award">🥈 Silver Medal, APCYS 2023</div>
                     </div>
                     <p class="project-description">
-                        Built an AI to detect anomalies in bodily fluids to help in rural areas in third world countries like Nepal, where more than 600,000 people die from curable diseases like Malaria due to lack of timely medical attention. Won a silver medal at the Asia Pacific Conference of Young Scientists (APCYS), 2023.
+                        Dristi AI is a project that means a lot to me. I built it to help doctors in rural Nepal spot diseases early, so more people can get the care they deserve. Winning a silver medal at the Asia Pacific Conference of Young Scientists (APCYS-2023),for this work was special, but knowing it could save lives means even more.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Deep Learning</span>
@@ -250,7 +265,7 @@
                         <div class="project-award">🏆 Best Paper & Presenter, Green Cities Conference</div>
                     </div>
                     <p class="project-description">
-                        Built a project with my professor in my freshman year that improves diabetes classification using specialized ESN architectures, achieving 100% accuracy with feature engineering and network modeling. Awarded Best Paper in Knowledge Management and Best Presenter at the Green Cities Conference.
+                        This was a project I worked on with my professor during my freshman year of college. We found a way to improve diabetes diagnosis using an ESN architecturek with feature engineering and netwwork modeling. It was a huge learning experience, and being recognized for it at a conference was just the cherry on top.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Echo State Networks</span>
@@ -327,16 +342,7 @@
                     <p class="achievement-year">Fall 2024 & Summer 2025</p>
                     <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Perfect 4.0 GPA - Top Academic Performer</p>
                 </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="achievement-title">Startup CEO & Co-founder</h3>
-                    <p class="achievement-year">2024 - Present</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Stealth Mode AI-Powered FinTech Startup</p>
-                </div>
-
+                
                 <div class="achievement-card">
                     <div class="achievement-icon">
                         <i class="fas fa-handshake"></i>
@@ -426,7 +432,7 @@
         <!-- Feedback Section -->
         <section class="section" id="feedback">
             <h2 class="section-title">Share Your Feedback</h2>
-            <p class="section-subtitle">Your thoughts help me grow and create better solutions</p>
+            <p class="section-subtitle">I'd love to hear from you—your thoughts and ideas mean a lot to me!</p>
             
             <div class="feedback-container">
                 <div class="feedback-intro">
@@ -434,8 +440,8 @@
                         <i class="fas fa-hands-praying"></i>
                         <span class="nepali-text">धन्यवाद</span>
                     </div>
-                    <h3>I value your perspective</h3>
-                    <p>Whether you're a potential collaborator, fellow developer, or someone interested in cultural technology, your feedback helps me improve and grow. Share your thoughts!</p>
+                    <h3>Thank you for being here</h3>
+                    <p>Whether you have feedback, ideas, or just want to say hello, your message is always welcome. I read every note and truly appreciate you taking the time to reach out. Let’s connect and see what we can create together!</p>
                 </div>
                 
                 <form class="feedback-form" id="feedbackForm">

@@ -57,14 +57,17 @@
     function toggleTheme() {
         const body = document.body;
         const themeText = document.getElementById('themeText');
+        const mobileThemeText = document.getElementById('mobileThemeText');
         
         body.classList.toggle('light-theme');
         
         if (body.classList.contains('light-theme')) {
             themeText.textContent = 'Dark Mode';
+            mobileThemeText.textContent = 'Dark Mode';
             currentTheme = 'light';
         } else {
             themeText.textContent = 'Light Mode';
+            mobileThemeText.textContent = 'Light Mode';
             currentTheme = 'dark';
         }
         
@@ -72,7 +75,33 @@
         body.style.transition = 'all 0.5s ease';
     }
 
-    // Star Rating System
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close mobile menu when clicking on nav links
+function closeMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    navLinks.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Star Rating System
     let selectedRating = 0;
     
     function initStarRating() {
@@ -570,6 +599,8 @@ document.addEventListener('mousemove', (e) => {
 
     // Export functions for global access
     window.toggleTheme = toggleTheme;
+    window.toggleMobileMenu = toggleMobileMenu;
+    window.closeMobileMenu = closeMobileMenu;
     window.resetFeedbackForm = resetFeedbackForm;
 
 // --- SCROLLSPY & SECTION FADE-IN ---
@@ -606,6 +637,31 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', revealSections);
   window.addEventListener('resize', revealSections);
   revealSections();
+  
+  // --- Mobile Menu Event Listeners ---
+  // Close mobile menu when clicking on nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !mobileMenuBtn.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Close mobile menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
 });
 
 // --- BUTTON MICROINTERACTIONS ---
