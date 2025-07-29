@@ -504,7 +504,7 @@ body.light-theme {
 
 /* Hide mobile theme toggle on desktop */
 .mobile-theme-toggle {
-    display: none;
+    display: none !important;
 }
 
 /* Mobile Menu Button */
@@ -1575,7 +1575,7 @@ body.light-theme {
     }
     
     .mobile-theme-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         gap: 0.8rem;
         background: none;
