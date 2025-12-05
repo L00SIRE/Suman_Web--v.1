@@ -42,7 +42,7 @@ const Education = () => {
               <div className="degree-info">
                 <h4 className="degree-title">Bachelor of Science in Computer Science</h4>
                 <p className="coursework">
-                  <strong>Relevant Coursework:</strong> Data Structures, Python Programming, R for Data
+                  <strong>Relevant Coursework:</strong> Deep Learning Fundamentals, Advanced Python, Probability and Statistics, Data Structures, Python Programming, R for Data
                   Analysis, Computer Architecture, Calculus II, Linear Algebra.
                 </p>
               </div>
