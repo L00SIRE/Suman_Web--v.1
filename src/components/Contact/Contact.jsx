@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Github, Instagram, Linkedin, Copy, Check, Mail } from 'lucide-react'
 import './Contact.css'
 
 const Contact = () => {
@@ -14,17 +15,17 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: 'fab fa-github',
+      icon: Github,
       label: 'GitHub',
       link: 'https://github.com/L00SIRE',
     },
     {
-      icon: 'fab fa-instagram',
+      icon: Instagram,
       label: 'Instagram',
       link: 'https://www.instagram.com/loosire__/',
     },
     {
-      icon: 'fab fa-linkedin',
+      icon: Linkedin,
       label: 'LinkedIn',
       link: 'https://www.linkedin.com/in/suman-dangal-007np/',
     },
@@ -50,6 +51,7 @@ const Contact = () => {
 
           <div className="contact-actions">
             <div className="email-wrapper">
+              <Mail size={20} className="email-icon" />
               <a href={`mailto:${email}`} className="email-link">
                 {email}
               </a>
@@ -58,7 +60,7 @@ const Contact = () => {
                 onClick={handleCopyEmail}
                 aria-label="Copy email address"
               >
-                <i className={`fas ${copied ? 'fa-check' : 'fa-copy'}`}></i>
+                {copied ? <Check size={18} /> : <Copy size={18} />}
               </button>
               {copied && <span className="copy-feedback">Copied!</span>}
             </div>
@@ -73,7 +75,7 @@ const Contact = () => {
                   className="social-icon"
                   aria-label={social.label}
                 >
-                  <i className={social.icon}></i>
+                  <social.icon size={24} />
                 </a>
               ))}
             </div>

@@ -1,26 +1,27 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { BookOpen, Landmark, Globe, Microscope } from 'lucide-react'
 import './Interests.css'
 
 const Interests = () => {
   const interests = [
     {
-      icon: 'fa-book-open',
+      icon: BookOpen,
       title: 'Religious Studies',
       tags: ['Hindu Scriptures', 'Buddhist Texts', 'Comparative Religion', 'Sacred Literature', 'Philosophical Analysis'],
     },
     {
-      icon: 'fa-chess-rook',
+      icon: Landmark, // Changed from ChessRook to Landmark for Sculpture/Art
       title: 'Sculpture & Art Analysis',
       tags: ['Nepali Sculptures', 'Deity Iconography', 'Historical Context', 'Art Conservation', 'Cultural Symbolism'],
     },
     {
-      icon: 'fa-globe-asia',
+      icon: Globe,
       title: 'Cultural Heritage',
       tags: ['Heritage Preservation', 'Cultural Documentation', 'Traditional Arts', 'Archaeological Research', 'Digital Archiving'],
     },
     {
-      icon: 'fa-microscope',
+      icon: Microscope,
       title: 'Innovation & Research',
       tags: ['AI Applications', 'Mathematical Modeling', 'Cross-disciplinary Research', 'Technology Innovation', 'Problem Solving'],
     },
@@ -28,53 +29,48 @@ const Interests = () => {
 
   return (
     <section className="section interests-section" id="interests">
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        Cultural Interests & Passions
-      </motion.h2>
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        Beyond technology, I'm deeply passionate about cultural heritage, religious studies, and
-        artistic preservation
-      </motion.p>
-      <div className="skills-grid">
-        {interests.map((interest, index) => (
-          <motion.div
-            key={index}
-            className="skill-category"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ y: -10 }}
-          >
-            <div className="skill-icon">
-              <i className={`fas ${interest.icon}`}></i>
-            </div>
-            <h3 className="skill-title">{interest.title}</h3>
-            <div className="skill-list">
-              {interest.tags.map((tag, idx) => (
-                <span key={idx} className="skill-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+      <div className="container">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Interests</h2>
+          <p className="section-subtitle">
+            Passions beyond code.
+          </p>
+        </motion.div>
+
+        <div className="interests-grid">
+          {interests.map((interest, index) => (
+            <motion.div
+              key={index}
+              className="interest-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="interest-icon-wrapper">
+                <interest.icon size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="interest-title">{interest.title}</h3>
+              <div className="interest-tags">
+                {interest.tags.map((tag, idx) => (
+                  <span key={idx} className="interest-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
 
 export default Interests
-

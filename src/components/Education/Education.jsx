@@ -1,49 +1,57 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { GraduationCap } from 'lucide-react'
 import './Education.css'
 
 const Education = () => {
   return (
     <section className="section education-section" id="education">
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <i className="fas fa-graduation-cap"></i> Education
-      </motion.h2>
-      <div className="education-container">
+      <div className="container">
         <motion.div
-          className="education-item"
-          initial={{ opacity: 0, y: 30 }}
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          whileHover={{ y: -5 }}
         >
-          <div className="education-header">
-            <div className="education-institution">
-              <h3>Springfield College</h3>
-              <p className="education-location">Springfield, MA</p>
-            </div>
-            <div className="education-dates">Expected 2028</div>
-          </div>
-          <div className="education-degree">
-            <h4>Bachelor of Science in Computer Science</h4>
-          </div>
-          <div className="education-details">
-            <p>
-              <strong>Relevant Coursework:</strong> Data Structures, Python Programming, R for Data
-              Analysis, Computer Architecture, Calculus II, Linear Algebra, and more.
-            </p>
-          </div>
+          <h2 className="section-title">Education</h2>
+          <p className="section-subtitle">Academic background and qualifications.</p>
         </motion.div>
+
+        <div className="education-container">
+          <motion.div
+            className="education-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="education-icon">
+              <GraduationCap size={32} strokeWidth={1.5} />
+            </div>
+            
+            <div className="education-content">
+              <div className="education-header">
+                <div>
+                  <h3 className="institution-name">Springfield College</h3>
+                  <p className="institution-location">Springfield, MA</p>
+                </div>
+                <span className="education-year">Expected 2028</span>
+              </div>
+              
+              <div className="degree-info">
+                <h4 className="degree-title">Bachelor of Science in Computer Science</h4>
+                <p className="coursework">
+                  <strong>Relevant Coursework:</strong> Data Structures, Python Programming, R for Data
+                  Analysis, Computer Architecture, Calculus II, Linear Algebra.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )
 }
 
 export default Education
-

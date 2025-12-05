@@ -9,7 +9,7 @@ const IntroScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false)
-    }, 4000)
+    }, 3500) // Slightly shorter duration
 
     return () => clearTimeout(timer)
   }, [])
@@ -21,30 +21,28 @@ const IntroScreen = () => {
       className="intro-screen"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ duration: 1, delay: 3 }}
+      transition={{ duration: 0.8, delay: 2.5 }}
       style={{ pointerEvents: isVisible ? 'auto' : 'none' }}
     >
       <div className="intro-logo">
-        <div className="namaste-glow"></div>
         <motion.img
           src={namasteImage}
-          alt="Namaste Icon"
+          alt="Namaste"
           className="namaste-3d"
-          initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          whileHover={{ scale: 1.08, rotateZ: -3, rotateX: 8, rotateY: -8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         />
       </div>
       <motion.div
         className="intro-text"
-        initial={{ opacity: 0, y: 30, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 1.5, delay: 1.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
       >
         <h1 className="intro-title">Suman Dangal</h1>
         <p className="intro-subtitle">
-          Co-founder & Founding Engineer @ Dr. Money | Co-founder & CTO @ Saalik Tech
+          Building technology for culture & finance.
         </p>
       </motion.div>
     </motion.div>
@@ -52,4 +50,3 @@ const IntroScreen = () => {
 }
 
 export default IntroScreen
-
