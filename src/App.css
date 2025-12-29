@@ -8,3 +8,43 @@
   z-index: 10;
 }
 
+/* Global Loading & Error Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--accent-primary, #333); /* Fallback color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  color: var(--text-secondary, #666);
+  font-size: 0.95rem;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+  background-color: var(--bg-primary, #fff);
+  border-radius: 8px; /* Hardcoded radius to be safe if variable missing */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin: 1rem 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+

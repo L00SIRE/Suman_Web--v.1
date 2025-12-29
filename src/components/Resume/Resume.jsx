@@ -34,7 +34,7 @@ const Resume = () => {
             >
               <Download size={24} />
               <span>Download PDF</span>
-              <small>Updated Jul 2025</small>
+              <small>Updated Dec 2024</small>
             </motion.a>
 
             <motion.a

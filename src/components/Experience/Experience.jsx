@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { experienceData } from '../../data/experience'
+import { api } from '../../services/api'
 import { Briefcase, Calendar } from 'lucide-react'
 import './Experience.css'
 
 const Experience = () => {
+  const [experience, setExperience] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const loadExperience = async () => {
+      try {
+        const data = await api.fetchExperience()
+        setExperience(data)
+        setLoading(false)
+      } catch (err) {
+        setError('Failed to load experience data.')
+        setLoading(false)
+      }
+    }
+    loadExperience()
+  }, [])
+
   return (
     <section className="section experience-section" id="experience">
       <div className="container">
@@ -21,35 +39,50 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="experience-list">
-          {experienceData.map((exp, index) => (
-            <motion.div
-              key={index}
-              className="experience-item"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <div className="experience-main">
-                <div className="experience-header">
-                  <h3 className="experience-role">{exp.role}</h3>
-                  <span className="experience-company">@ {exp.company}</span>
+        {loading && (
+          <div className="loading-container">
+            <div className="spinner"></div>
+            <p className="loading-text">Loading experience...</p>
+          </div>
+        )}
+
+        {error && (
+          <div className="error-container">
+            <p>{error}</p>
+          </div>
+        )}
+
+        {!loading && !error && (
+          <div className="experience-list">
+            {experience.map((exp, index) => (
+              <motion.div
+                key={index}
+                className="experience-item"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="experience-main">
+                  <div className="experience-header">
+                    <h3 className="experience-role">{exp.role}</h3>
+                    <span className="experience-company">@ {exp.company}</span>
+                  </div>
+                  <div className="experience-meta">
+                    <Calendar size={16} className="meta-icon" />
+                    <span>{exp.dates}</span>
+                  </div>
                 </div>
-                <div className="experience-meta">
-                  <Calendar size={16} className="meta-icon" />
-                  <span>{exp.dates}</span>
-                </div>
-              </div>
-              
-              <ul className="experience-details">
-                {exp.details.map((detail, idx) => (
-                  <li key={idx}>{detail}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+                
+                <ul className="experience-details">
+                  {exp.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

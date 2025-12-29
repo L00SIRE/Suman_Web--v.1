@@ -11,7 +11,6 @@ import Projects from './components/Projects/Projects'
 import Leadership from './components/Leadership/Leadership'
 import Achievements from './components/Achievements/Achievements'
 import Interests from './components/Interests/Interests'
-import Feedback from './components/Feedback/Feedback'
 import Contact from './components/Contact/Contact'
 import Resume from './components/Resume/Resume'
 import Footer from './components/Footer/Footer'
@@ -32,7 +31,6 @@ function App() {
           <Leadership />
           <Achievements />
           <Interests />
-          <Feedback />
           <Contact />
           <Resume />
         </main>

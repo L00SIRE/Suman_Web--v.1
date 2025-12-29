@@ -15,7 +15,8 @@ const Header = () => {
   }, [])
 
   const navLinks = [
-    { href: '#about', label: 'About' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ]
@@ -38,7 +39,7 @@ const Header = () => {
     >
       <nav className="nav-container">
         <div className="brand">
-          <span onClick={(e) => handleNavClick(e, '#about')}>Suman.</span>
+          <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Suman.</span>
         </div>
 
         <button

@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { projectsData } from '../../data/projects'
+import { api } from '../../services/api'
 import { Folder, ExternalLink, Github } from 'lucide-react'
 import './Projects.css'
 
 const Projects = () => {
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const data = await api.fetchProjects()
+        setProjects(data)
+        setLoading(false)
+      } catch (err) {
+        setError('Failed to load projects. Please try again later.')
+        setLoading(false)
+      }
+    }
+
+    loadProjects()
+  }, [])
+
   return (
     <section className="section projects-section" id="projects">
       <div className="container">
@@ -22,7 +41,20 @@ const Projects = () => {
         </motion.div>
 
         <div className="projects-grid">
-          {projectsData.map((project, index) => (
+          {loading && (
+            <div className="loading-container">
+              <div className="spinner"></div>
+              <p className="loading-text">Loading projects...</p>
+            </div>
+          )}
+
+          {error && (
+            <div className="error-container">
+              <p>{error}</p>
+            </div>
+          )}
+
+          {!loading && !error && projects.map((project, index) => (
             <motion.div
               key={index}
               className="project-card"

@@ -123,9 +123,15 @@ a {
     transform: translateY(-2px);
 }
 
-/* Smooth Scroll */
+/* Smooth Scroll with offset for fixed header */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Ensure sections have margin for sticky header */
+.section {
+    scroll-margin-top: 100px;
 }
 
 @media (max-width: 768px) {
