@@ -1,0 +1,75 @@
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.intro-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subtle organic shape behind the image */
+.intro-logo::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-sage-light);
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.namaste-3d {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    z-index: 1;
+    /* Ensure it stands out against the light background */
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); 
+}
+
+.intro-text {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.intro-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.intro-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 2.5rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1rem;
+    }
+}
