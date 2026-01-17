@@ -97,12 +97,58 @@
 }
 
 @media (max-width: 768px) {
+    .experience-list {
+        gap: 3rem;
+    }
+    
     .experience-item {
-        padding-left: 1.5rem;
+        padding-left: 1.25rem;
     }
     
     .experience-header {
         flex-direction: column;
         gap: 0.2rem;
+    }
+    
+    .experience-role {
+        font-size: 1.3rem;
+    }
+    
+    .experience-company {
+        font-size: 1rem;
+    }
+    
+    .experience-meta {
+        font-size: 0.85rem;
+    }
+    
+    .experience-details li {
+        font-size: 0.95rem;
+        padding-left: 1.25rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .experience-list {
+        gap: 2.5rem;
+    }
+    
+    .experience-item {
+        padding-left: 1rem;
+    }
+    
+    .experience-role {
+        font-size: 1.15rem;
+    }
+    
+    .experience-company {
+        font-size: 0.95rem;
+    }
+    
+    .experience-details li {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 }
