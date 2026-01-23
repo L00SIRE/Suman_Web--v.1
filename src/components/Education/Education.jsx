@@ -76,6 +76,12 @@ const Education = () => {
                   
                   <div className="degree-info">
                     <h4 className="degree-title">{edu.degree}</h4>
+                    {edu.gpa && (
+                      <p className="gpa-info">
+                        <strong>GPA:</strong> {edu.gpa} {edu.honors && `| `}
+                        {edu.honors && <strong>Honors:</strong>} {edu.honors}
+                      </p>
+                    )}
                     <p className="coursework">
                       <strong>Relevant Coursework:</strong> {edu.coursework}
                     </p>

@@ -2,8 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
 import profileImage from "../../assets/me.png";
+import resumePdf from "../../assets/resume.pdf";
 
 const Hero = () => {
+  const resumeUrl = `${resumePdf}?v=${Date.now()}`;
+  
   const scrollToSection = (id) => {
     const element = document.querySelector(id);
     if (element) {
@@ -60,7 +63,7 @@ const Hero = () => {
               See My Work
             </button>
             <a
-              href="./resume.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

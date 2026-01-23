@@ -6,29 +6,30 @@ import './Leadership.css'
 const Leadership = () => {
   const leadershipRoles = [
     {
-      icon: Bot,
-      title: 'President, SWSCRC',
+      icon: Users,
+      title: 'Vice President, CS Club',
       skills: [
-        'Led a high school robotics club with 200+ members',
-        'Organized conferences and exhibitions',
-        'Team innovation',
+        'Elected in a competitive election among 50 students',
+        'Organizing coding events and workshops',
+        'Student leadership and mentorship',
       ],
     },
     {
       icon: Star,
-      title: 'General Secretary, SWSCAAC',
+      title: 'Honors Council Member',
       skills: [
-        'Managed astronomical outreach programs',
-        'Telescope and deep sky observation',
-        'Science communication',
+        'Academic excellence advocacy',
+        'Peer mentoring and support',
+        'Honor code representation',
       ],
     },
     {
-      icon: Users,
-      title: 'Vice President, Springfield College Computer Science Club',
+      icon: Bot,
+      title: 'President, SWSCRC (Robotics Club)',
       skills: [
-        'Elected in a competitive election among 50 students',
-        'Student leadership',
+        'Led a high school robotics club with 200+ members',
+        'Organized conferences and exhibitions',
+        'Team innovation and technical leadership',
       ],
     },
   ]

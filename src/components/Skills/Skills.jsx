@@ -1,24 +1,29 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Code, Brain, Network } from 'lucide-react'
+import { Code, Brain, Globe, Wrench } from 'lucide-react'
 import './Skills.css'
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Code,
-      title: 'Programming Languages',
-      skills: ['Python', 'Java', 'JavaScript', 'Shell', 'C++', 'GoLang', 'SQL', 'HTML', 'CSS'],
+      title: 'Languages',
+      skills: ['Python', 'Java', 'C++', 'JavaScript', 'GoLang', 'SQL', 'Shell'],
+    },
+    {
+      icon: Globe,
+      title: 'Web & Backend',
+      skills: ['REST API', 'GraphQL', 'HTML', 'CSS', 'AWS'],
     },
     {
       icon: Brain,
       title: 'AI & Machine Learning',
-      skills: ['Deep Learning', 'LLM', 'RAG', 'Semantic Search', 'Vector Database'],
+      skills: ['RAG', 'Vector Databases', 'LLM Integration', 'Deep Learning', 'Echo State Networks'],
     },
     {
-      icon: Network,
-      title: 'APIs & Cloud',
-      skills: ['GraphQL', 'REST API', 'AWS'],
+      icon: Wrench,
+      title: 'Tools',
+      skills: ['Git', 'GitHub', 'VS Code', 'Linux'],
     },
   ]
 
