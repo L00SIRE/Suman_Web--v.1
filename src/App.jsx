@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './components/Header/Header'
 import IntroScreen from './components/IntroScreen/IntroScreen'
@@ -35,6 +36,7 @@ function App() {
           <Resume />
         </main>
         <Footer />
+        <Analytics />
       </div>
     </ThemeProvider>
   )
