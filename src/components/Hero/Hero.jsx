@@ -24,9 +24,10 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <img
-            src={profileImage}
-            alt="Suman Dangal"
+            src="/suman-dangal.jpg"
+            alt="Suman Dangal - AI Researcher and Tech Entrepreneur"
             className="hero-profile-img"
+            loading="eager"
           />
         </motion.div>
 
