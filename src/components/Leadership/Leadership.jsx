@@ -1,17 +1,26 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Bot, Star, Users } from 'lucide-react'
+import { Bot, Star, Users, Rocket } from 'lucide-react'
 import './Leadership.css'
 
 const Leadership = () => {
   const leadershipRoles = [
     {
-      icon: Users,
-      title: 'Vice President, CS Club',
+      icon: Rocket,
+      title: 'President, Entrepreneurs & Founders Club',
       skills: [
-        'Elected in a competitive election among 50 students',
+        'Founded and led the club at Springfield College',
+        'Hosting founder talks and pitch sessions',
+        'Building a community of student entrepreneurs',
+      ],
+    },
+    {
+      icon: Users,
+      title: 'President, CS Club',
+      skills: [
+        'Leading the club after election among 50 students',
         'Organizing coding events and workshops',
-        'Student leadership and mentorship',
+        'Mentoring members and driving student initiatives',
       ],
     },
     {

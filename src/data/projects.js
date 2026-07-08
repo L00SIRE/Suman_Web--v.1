@@ -1,5 +1,15 @@
 export const projectsData = [
   {
+    title: "ImmiCalm",
+    icon: "fa-dove",
+    award: "🏆 Best Business Impact, US-Nepal Hackathon 2026",
+    description:
+      "A privacy-first web app that acts as an anxiety-reducing filter between immigration news and the user. Surfaces only updates relevant to your visa type (F-1/H-1B) and state, rated by severity (green/yellow/red), with side-by-side myth-busting of viral claims and mood-aware AI Q&A. Zero personal data stored server-side. Led the 'calm-first' glassmorphism design system, UI components, and dashboard mood logic.",
+    technologies: ["Next.js", "TypeScript", "React", "UI/UX Design", "AI"],
+    date: "Mar 2026",
+    github: "https://github.com/sujandumaru/team67-immicalm",
+  },
+  {
     title: "Ratools",
     description:
       "A web-based bulletin board suite that automates the design of large-scale bulletin boards. Implements Lanczos resampling and Bicubic interpolation for high-fidelity image upscaling, with an automated tiling algorithm to fragment large graphics into printable A4-sized segments, reducing manual design preparation time by 90%.",

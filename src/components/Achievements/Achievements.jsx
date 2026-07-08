@@ -1,10 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Trophy, GraduationCap, Handshake, Medal } from 'lucide-react'
+import { Trophy, GraduationCap, Handshake, Medal, Award, BookOpen } from 'lucide-react'
 import './Achievements.css'
 
 const Achievements = () => {
   const achievements = [
+    {
+      icon: Award,
+      title: 'US-Nepal Hackathon 2026 — Best Business Impact',
+      year: '2026 - Mental Health Track',
+      description: 'ImmiCalm — a calm-first, privacy-first web app that filters US immigration news by visa type & severity for F-1/H-1B students',
+    },
     {
       icon: Trophy,
       title: 'Western New England FinTech+AI Winner',
@@ -20,8 +26,14 @@ const Achievements = () => {
     {
       icon: GraduationCap,
       title: "Dean's List",
-      year: 'Fall 2024 & Summer 2025',
+      year: 'Fall 2024, Summer 2025 & Spring 2026',
       description: 'Perfect 4.0 GPA - Top Academic Performer',
+    },
+    {
+      icon: BookOpen,
+      title: 'Featured in Springfield College Laurels',
+      year: 'Fall 2025 - Vol. 12, Issue 2',
+      description: "Recognized in the college's student success & achievements publication",
     },
     {
       icon: Handshake,
