@@ -2,7 +2,7 @@
   "name": "suman-dangal-portfolio",
   "version": "2.0.0",
   "type": "module",
-  "description": "Modern React portfolio website for Suman Dangal - AI Researcher, Startup & Cultural Technology Innovator",
+  "description": "Personal site for Suman Dangal",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

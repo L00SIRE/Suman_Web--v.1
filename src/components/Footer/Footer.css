@@ -1,82 +1,38 @@
 .footer {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: var(--bg-secondary);
-    margin-top: 0; /* Removed margin since it's a distinct section now */
+  position: relative;
+  z-index: 2;
+  padding: 3rem 2rem 4rem;
+  border-top: 1px solid var(--line);
 }
 
-.footer-socials {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.footer-social {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-.footer-social:hover {
-    color: var(--bg-primary);
-    background-color: var(--text-primary);
-    border-color: var(--text-primary);
-    transform: translateY(-3px);
+.footer-note {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
-.footer-copy {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-family: var(--font-body);
-}
+@media (max-width: 640px) {
+  .footer {
+    padding: 2.5rem 1.25rem 3rem;
+  }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .footer {
-        padding: 3rem 1.5rem;
-    }
-    
-    .footer-socials {
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .footer-social {
-        width: 42px;
-        height: 42px;
-        font-size: 1.3rem;
-    }
-    
-    .footer-copy {
-        font-size: 0.85rem;
-    }
-}
-
-/* Small mobile */
-@media (max-width: 480px) {
-    .footer {
-        padding: 2.5rem 1rem;
-    }
-    
-    .footer-socials {
-        gap: 1.25rem;
-    }
-    
-    .footer-social {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .footer-copy {
-        font-size: 0.8rem;
-    }
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

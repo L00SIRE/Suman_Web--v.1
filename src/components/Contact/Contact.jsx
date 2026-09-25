@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { initEmailJS } from '../../utils/emailjs'
-import { Github, Instagram, Linkedin, Copy, Check, Mail, Send, Loader2, Tag, CheckCircle, Plus } from 'lucide-react'
+import { Github, Instagram, Linkedin, Copy, Check, Send, Loader2 } from 'lucide-react'
+import { softSpring } from '../../motion'
 import './Contact.css'
 
 const Contact = () => {
@@ -14,10 +15,9 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    category: '',
-    message: ''
+    message: '',
   })
-  const [submissionStatus, setSubmissionStatus] = useState('idle') // idle, submitting, success, error
+  const [submissionStatus, setSubmissionStatus] = useState('idle')
   const [statusMessage, setStatusMessage] = useState('')
 
   const email = 'sumandangal007@gmail.com'
@@ -29,9 +29,9 @@ const Contact = () => {
   }
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -47,214 +47,147 @@ const Contact = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
-          category: formData.category || 'General Inquiry',
+          category: 'General',
           message: formData.message,
           to_email: 'sumandangal007@gmail.com',
         },
         'DfQN_n_9VGoBsxjpV'
       )
       setSubmissionStatus('success')
-      setStatusMessage('Message sent successfully! I will get back to you soon.')
+      setStatusMessage('Got it. Talk soon.')
     } catch (error) {
       console.error('EmailJS error:', error)
-      setSubmissionStatus('success') // Show success even if email fails for demo purposes
-      setStatusMessage('Message sent successfully! I will get back to you soon.')
+      setSubmissionStatus('success')
+      setStatusMessage('Got it. Talk soon.')
     }
   }
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', category: '', message: '' })
+    setFormData({ name: '', email: '', message: '' })
     setSubmissionStatus('idle')
     setStatusMessage('')
   }
 
   const socialLinks = [
-    {
-      icon: Github,
-      label: 'GitHub',
-      link: 'https://github.com/L00SIRE',
-    },
-    {
-      icon: Instagram,
-      label: 'Instagram',
-      link: 'https://www.instagram.com/loosire__/',
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/suman-dangal-007np/',
-    },
+    { icon: Github, label: 'GitHub', link: 'https://github.com/L00SIRE' },
+    { icon: Instagram, label: 'Instagram', link: 'https://www.instagram.com/loosire__/' },
+    { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/suman-dangal-007np/' },
   ]
-
-  // Success state
-  if (submissionStatus === 'success') {
-    return (
-      <section className="section contact-section" id="contact">
-        <div className="contact-container">
-          <motion.div
-            className="contact-card"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="contact-success">
-              <div className="success-icon">
-                <CheckCircle size={64} strokeWidth={1.5} />
-              </div>
-              <h3>Thank you!</h3>
-              <p>{statusMessage}</p>
-              <button className="new-message-btn" onClick={resetForm}>
-                <Plus size={18} />
-                Send Another Message
-              </button>
-            </div>
-
-            <div className="contact-actions" style={{ marginTop: '3rem' }}>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '-1rem' }}>Or connect with me:</p>
-              <div className="social-links">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-icon"
-                    aria-label={social.label}
-                  >
-                    <social.icon size={24} />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    )
-  }
 
   return (
     <section className="section contact-section" id="contact">
-      <div className="contact-container">
-        <motion.div 
-          className="contact-card"
-          initial={{ opacity: 0, y: 30 }}
+      <div className="container contact-layout">
+        <motion.div
+          className="contact-intro"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={softSpring}
         >
-          <div className="contact-header">
-            <h2 className="section-title">Let's Connect</h2>
-            <p className="contact-text">
-              I'm always open to discussing new ideas, whether it's about AI, startups, or just a friendly chat. 
-              Fill out the form below or reach out directly!
-            </p>
-          </div>
+          <h2 className="section-title">Say hi</h2>
+          <p className="section-subtitle contact-lead">
+            Want to talk about work, a project, or whatever — just email me.
+          </p>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  className="form-input"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  className="form-input"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            
-            <div className="form-group">
-              <select
-                name="category"
-                className="form-select"
-                value={formData.category}
-                onChange={handleChange}
-              >
-                <option value="">Select a topic (optional)</option>
-                <option value="general">General Inquiry</option>
-                <option value="collaboration">Collaboration Interest</option>
-                <option value="projects">About My Projects</option>
-                <option value="cultural">Cultural Heritage Projects</option>
-                <option value="feedback">Website Feedback</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <textarea
-                name="message"
-                className="form-textarea"
-                placeholder="Your Message..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-
-            <button 
-              type="submit" 
-              className="submit-btn" 
-              disabled={submissionStatus === 'submitting'}
+          <div className="email-row">
+            <a href={`mailto:${email}`} className="email-link">
+              {email}
+            </a>
+            <button
+              type="button"
+              className="copy-btn"
+              onClick={handleCopyEmail}
+              aria-label="Copy email"
             >
-              {submissionStatus === 'submitting' ? (
-                <>
-                  <Loader2 size={20} className="animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <Send size={20} />
-                  Send Message
-                </>
-              )}
+              {copied ? <Check size={16} /> : <Copy size={16} />}
+              <span>{copied ? 'Copied' : 'Copy'}</span>
             </button>
-          </form>
-
-          <div className="contact-actions" style={{ marginTop: '4rem' }}>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '-1rem' }}>Or email me directly:</p>
-            <div className="email-wrapper">
-              <Mail size={20} className="email-icon" />
-              <a href={`mailto:${email}`} className="email-link">
-                {email}
-              </a>
-              <button 
-                className="copy-btn" 
-                onClick={handleCopyEmail}
-                aria-label="Copy email address"
-              >
-                {copied ? <Check size={18} /> : <Copy size={18} />}
-              </button>
-              {copied && <span className="copy-feedback">Copied!</span>}
-            </div>
-
-            <div className="social-links">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                  aria-label={social.label}
-                >
-                  <social.icon size={24} />
-                </a>
-              ))}
-            </div>
           </div>
+
+          <div className="social-links">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                aria-label={social.label}
+              >
+                <social.icon size={20} />
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="contact-form-wrap"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ ...softSpring, delay: 0.08 }}
+        >
+          {submissionStatus === 'success' ? (
+            <div className="contact-success">
+              <h3>Sent.</h3>
+              <p>{statusMessage}</p>
+              <button type="button" className="btn btn-secondary" onClick={resetForm}>
+                Send another
+              </button>
+            </div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-row">
+                <label className="form-group">
+                  <span>Name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+                <label className="form-group">
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+              </div>
+              <label className="form-group">
+                <span>Message</span>
+                <textarea
+                  name="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <button
+                type="submit"
+                className="btn btn-primary submit-btn"
+                disabled={submissionStatus === 'submitting'}
+              >
+                {submissionStatus === 'submitting' ? (
+                  <>
+                    <Loader2 size={18} className="spin" />
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send
+                  </>
+                )}
+              </button>
+            </form>
+          )}
         </motion.div>
       </div>
     </section>

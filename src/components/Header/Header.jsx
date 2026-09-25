@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { softSpring } from '../../motion'
 import './Header.css'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [overHero, setOverHero] = useState(true)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled(y > 40)
+      setOverHero(y < window.innerHeight * 0.72)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const navLinks = [
-    { href: '#experience', label: 'Experience' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
+    { href: '#work', label: 'Work' },
+    { href: '#awards', label: 'Awards' },
     { href: '#contact', label: 'Contact' },
   ]
 
@@ -32,23 +36,25 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`header ${scrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      className={`header ${scrolled ? 'scrolled' : ''} ${overHero ? 'on-hero' : ''}`}
+      initial={{ y: -24, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={softSpring}
     >
       <nav className="nav-container">
         <div className="brand">
-          <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Suman.</span>
+          <span onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Suman.
+          </span>
         </div>
 
         <button
           className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle mobile menu"
+          aria-label="Toggle menu"
         >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
+          <span className="hamburger-line" />
+          <span className="hamburger-line" />
         </button>
 
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
