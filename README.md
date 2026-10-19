@@ -1,71 +1,24 @@
-# Suman Dangal Portfolio - React Edition
+# sumandangal.com
 
-A modern, professional portfolio website built with React, showcasing the work and achievements of Suman Dangal - AI Researcher, Startup Founder, and Cultural Technology Innovator.
+Source for my personal site: research, projects and roles, plus a contact form.
 
-## 🚀 Features
+Built with React, Vite and Framer Motion. Deployed on Vercel.
 
-- **Modern React Architecture**: Built with React 18, Vite, and modern best practices
-- **Smooth Animations**: Powered by Framer Motion for professional transitions
-- **Responsive Design**: Fully responsive across all devices
-- **Dark/Light Theme**: Elegant theme switching with system preference detection
-- **Performance Optimized**: Fast loading times and optimized bundle size
-- **Accessibility**: WCAG compliant with keyboard navigation support
-- **SEO Friendly**: Optimized meta tags and semantic HTML
-
-## 🛠️ Tech Stack
-
-- **React 18** - Modern UI library
-- **Vite** - Fast build tool and dev server
-- **Framer Motion** - Animation library
-- **React Router** - Navigation
-- **EmailJS** - Contact form handling
-- **CSS Modules** - Scoped styling
-
-## 📦 Installation
+## Run locally
 
 ```bash
 npm install
-```
-
-## 🚀 Development
-
-```bash
 npm run dev
 ```
 
-Visit `http://localhost:3000`
-
-## 🏗️ Build
+## Build
 
 ```bash
 npm run build
 ```
 
-Output will be in the `dist` directory.
+Content lives in `src/data/`. The contact form uses EmailJS; set the keys in a local `.env` file (see `src/utils/emailjs.js`).
 
-## 📁 Project Structure
+## License
 
-```
-src/
-├── components/       # React components
-├── contexts/         # React contexts (Theme, etc.)
-├── hooks/            # Custom React hooks
-├── styles/           # Global styles and CSS modules
-├── assets/           # Images and static assets
-├── data/             # Static data (experience, projects, etc.)
-└── utils/            # Utility functions
-```
-
-## 🎨 Design Improvements
-
-- Enhanced color palette with better contrast
-- Improved typography hierarchy
-- Modern card designs with glassmorphism
-- Smooth scroll animations
-- Professional micro-interactions
-- Better mobile experience
-
-## 📝 License
-
-© 2025 Suman Dangal. All rights reserved.
-
+© Suman Dangal. All rights reserved.

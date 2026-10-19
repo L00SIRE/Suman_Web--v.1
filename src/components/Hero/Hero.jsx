@@ -47,17 +47,16 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p className="hero-line" variants={stagger.item}>
-          I build things.
+          Machine learning
           <br />
-          Trying to get better.
+          and software, built to work.
         </motion.p>
 
         <motion.p className="hero-sub" variants={stagger.item}>
-          I’m Suman Dangal — CS student at Springfield College, originally
-          from Kathmandu. Co-founded Dr. Money with some friends, still
-          building Saalik Tech back home, and I TA data structures. I like
-          making stuff that actually helps people and I’m down to learn
-          whatever gets me there.
+          I’m Suman Dangal, a CS and Math student at Springfield College, originally
+          from Kathmandu. I do applied ML research (Best Paper at the Green Cities
+          Conference), co-founded and am CTO at Saalik Tech, previously built
+          mobile infrastructure at Dr. Money, and TA data structures in C++.
         </motion.p>
 
         <motion.div className="hero-actions" variants={stagger.item}>
@@ -86,7 +85,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.p className="hero-footnote" variants={stagger.item}>
-          Springfield College · Graduating 2028 · Looking for internships
+          Springfield College · Class of 2028 · Open to 2027 internships
         </motion.p>
       </motion.div>
     </section>

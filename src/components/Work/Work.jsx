@@ -24,8 +24,7 @@ const Work = () => {
         >
           <h2 className="section-title">Work</h2>
           <p className="section-subtitle">
-            Stuff I’ve done so far. Startups, school, side projects, summer job.
-            Still figuring out where I’m going but I’m not sitting still.
+            Research, roles and projects, most recent first within each area.
           </p>
         </motion.div>
 
@@ -57,7 +56,7 @@ const Work = () => {
                 whileHover={{ y: -6, transition: softSpring }}
               >
                 <div className="work-panel-top">
-                  <span className="work-kind">{item.kind === 'role' ? 'Role' : 'Build'}</span>
+                  <span className="work-kind">{{ role: 'Role', research: 'Research' }[item.kind] || 'Build'}</span>
                   <span className="work-dates">{item.dates}</span>
                 </div>
                 <h3 className="work-title">{item.title}</h3>
