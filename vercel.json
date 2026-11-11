@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.sumandangal.com.np" }],
+      "destination": "https://www.sumandangal.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "sumandangal.com.np" }],
+      "destination": "https://www.sumandangal.com/:path*",
+      "permanent": true
+    }
+  ]
+}
